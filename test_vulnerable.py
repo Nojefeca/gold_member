@@ -1,3 +1,5 @@
-def funcion_insegura():
-    # Ejemplo simple para que salte una alerta o regla de prueba
-    print("Esta es una prueba de seguridad")
+import os
+
+def funcion_insegura(user_input):
+    # Vulnerabilidad de Command Injection detectada por Semgrep
+    os.system(user_input)
