@@ -11,14 +11,18 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     steps:
-      - name: Clonar repositorio
-        run: |
-          git clone https://github.com/${{ github.repository }}.git .
+      - name: Obtener el código
+        uses: actions/checkout@v4
 
-      - name: Configurar entorno e instalar dependencias
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip python3-pytest python3-fastapi python3-httpx
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-      - name: Ejecutar tests con pytest
-        run: python3 -m pytest -v
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install fastapi httpx pytest
+
+      - name: Ejecutar tests
+        run: python -m pytest -v
