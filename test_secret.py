@@ -1,0 +1,2 @@
+# Archivo de prueba con credenciales simuladas
+GITHUB_API_TOKEN = "ghp_000000000000000000000000000000000000000000000"
