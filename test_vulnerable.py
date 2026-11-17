@@ -1,5 +1,5 @@
-import os
+Python
 
-def funcion_insegura(user_input):
-    # Vulnerabilidad de Command Injection detectada por Semgrep
-    os.system(user_input)
+# Archivo de prueba de vulnerabilidades y secretos expuestos
+API_SECRET_KEY = "ghp_000000000000000000000000000000000000"
+PASSWORD_DB = "Admin123456*!"
