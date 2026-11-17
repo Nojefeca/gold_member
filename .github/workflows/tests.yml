@@ -11,18 +11,18 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     steps:
-      - name: Obtener el código
-        uses: actions/checkout@v4
-
-      - name: Configurar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Instalar dependencias
+      - name: Descargar codigo fuente
         run: |
-          python -m pip install --upgrade pip
-          pip install fastapi httpx pytest
+          apt-get update -y && apt-get install -y git
+          git init
+          git remote add origin https://github.com/${{ github.repository }}.git
+          git fetch origin ${{ github.ref_name }}
+          git checkout ${{ github.ref_name }}
+
+      - name: Instalar Python y dependencias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip python3-pytest python3-fastapi python3-httpx
 
       - name: Ejecutar tests
-        run: python -m pytest -v
+        run: python3 -m pytest -v
