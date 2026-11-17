@@ -1,0 +1,7 @@
+rules:
+  id: no-print-en-produccion
+  patterns:
+    - pattern: print(...)
+  message: "No uses print() en el código final. Utiliza un sistema de registro (logger)."
+  languages: [python]
+  severity: WARNING
