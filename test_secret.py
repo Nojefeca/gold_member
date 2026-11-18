@@ -1,2 +1,2 @@
 # Simulación de credencial expuesta para prueba de seguridad
-GITHUB_API_TOKEN = "ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+STRIPE_API_KEY = "sk_live_Zq8Rm2Xv9LpT4wNc7BdYk3Hs"
