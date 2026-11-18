@@ -1,0 +1,1 @@
+STRIPE_API_KEY = "sk_live_Tn6Bw3Qz8FkVa5XeRm2LdY9P"
